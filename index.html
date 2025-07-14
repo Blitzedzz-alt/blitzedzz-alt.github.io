@@ -175,6 +175,16 @@
       <li>If he lies about his age <strong>this much</strong>, you can’t trust anything he says</li>
     </ul>
   </div>
+  
+<script>
+  window.addEventListener("load", () => {
+    const music = document.getElementById("bgMusic");
+    const tryPlay = () => {
+      music.play().catch(() => setTimeout(tryPlay, 1000)); // keeps retrying
+    };
+    tryPlay();
+  });
+</script>
   <script>
     const canvas = document.getElementById('snow');
     const ctx = canvas.getContext('2d');
@@ -227,19 +237,6 @@
     });
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const music = document.getElementById("bgMusic");
-    const startMusic = () => {
-      music.play().catch(() => {});
-      document.removeEventListener("click", startMusic);
-      document.removeEventListener("touchstart", startMusic);
-    };
-
-    document.addEventListener("click", startMusic);
-    document.addEventListener("touchstart", startMusic);
-  });
-</script>
 
 </body>
 
