@@ -98,7 +98,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 
 <script>
-  // Replace all emojis in the entire document
   window.addEventListener('DOMContentLoaded', () => {
     twemoji.parse(document.body, {
       folder: 'svg',
@@ -226,6 +225,21 @@
       canvas.height = height;
     });
   </script>
+<audio id="bgMusic" src="https://files.catbox.moe/5alyja.mp3" loop></audio>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById("bgMusic");
+    const startMusic = () => {
+      music.play().catch(() => {});
+      document.removeEventListener("click", startMusic);
+      document.removeEventListener("touchstart", startMusic);
+    };
+
+    document.addEventListener("click", startMusic);
+    document.addEventListener("touchstart", startMusic);
+  });
+</script>
 
 </body>
 
