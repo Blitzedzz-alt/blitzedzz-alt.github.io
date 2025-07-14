@@ -96,7 +96,7 @@
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-<audio id="bgMusic" src="https://files.catbox.moe/5alyja.mp3" autoplay loop muted></audio>
+<embed src="https://files.catbox.moe/5alyja.mp3" width="0" height="0" autostart=true loop=true controller=false hidden>
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
@@ -175,20 +175,6 @@
       <li>If he lies about his age <strong>this much</strong>, you can’t trust anything he says</li>
     </ul>
   </div>
-  
-<script>
-  window.addEventListener("load", () => {
-    const music = document.getElementById("bgMusic");
-    music.play().then(() => {
-      setTimeout(() => {
-        music.muted = false; // Unmute after autoplay success
-        music.volume = 0.5;  // Optional: set desired volume
-      }, 1000); // 1 second delay before unmuting
-    }).catch(err => {
-      console.warn("Autoplay failed:", err);
-    });
-  });
-</script>
   <script>
     const canvas = document.getElementById('snow');
     const ctx = canvas.getContext('2d');
