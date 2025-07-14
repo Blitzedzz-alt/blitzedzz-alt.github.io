@@ -92,35 +92,46 @@
   vertical-align: -0.1em;
   display: inline;
 }
-
+    #overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      cursor: pointer;
+      z-index: 9999;
+      user-select: none;
+      transition: opacity 0.6s ease;
+    }
+    #overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 
-  <div id="msg">Click to enter</div>
+  <div id="overlay">Click to enter</div>
   <audio id="bgm" src="https://files.catbox.moe/5alyja.mp3" preload="auto"></audio>
-
   <script>
-    const msg = document.getElementById('msg');
+    const overlay = document.getElementById('overlay');
     const bgm = document.getElementById('bgm');
 
-    const start = async () => {
+    overlay.addEventListener('click', async () => {
       try {
         await bgm.play();
-        msg.textContent = 'Music Started 🎶';
-        msg.style.display = 'none';
-        document.body.style.cursor = 'default';
-        document.body.removeEventListener('click', start);
-      } catch (err) {
-        msg.textContent = 'Autoplay Blocked 😭';
-        msg.style.display = 'none';
-        msg.Display = None
-        console.error(err);
+        overlay.classList.add('hidden');
+        // Optional: remove overlay from DOM after fade out to free memory
+        setTimeout(() => overlay.remove(), 600);
+      } catch (e) {
+        overlay.textContent = 'Failed to play music 😭';
+        console.error(e);
       }
-    };
-
-    document.body.addEventListener('click', start);
+    });
   </script>
   <script>
   window.addEventListener('DOMContentLoaded', () => {
