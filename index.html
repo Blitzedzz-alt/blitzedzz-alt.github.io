@@ -98,7 +98,65 @@
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 
 
-<iframe src="https://files.catbox.moe/5alyja.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> 
+<audio id="bg-music" src="https://files.catbox.moe/5alyja.mp3" loop></audio>
+
+<script>
+(async () => {
+  const audio = document.getElementById("bg-music");
+  audio.volume = 0;
+  audio.muted = true;
+
+  const playAudio = async () => {
+    try {
+      await audio.play();
+      console.log("🎵 Audio autoplayed successfully");
+      setTimeout(() => {
+        audio.muted = false;
+        audio.volume = 1;
+      }, 1000); // unmute after playing
+    } catch (err) {
+      console.warn("❌ Autoplay blocked. Waiting for interaction...");
+    }
+  };
+
+  // Attempt #1: Try immediately (some browsers allow muted autoplay)
+  await playAudio();
+
+  // Attempt #2: Visibility change
+  document.addEventListener("visibilitychange", async () => {
+    if (document.visibilityState === "visible") await playAudio();
+  });
+
+  // Attempt #3: Fake gesture
+  const fire = async () => {
+    await playAudio();
+    document.removeEventListener("click", fire);
+    document.removeEventListener("keydown", fire);
+    document.removeEventListener("mousemove", fire);
+    document.removeEventListener("touchstart", fire);
+  };
+
+  // Attach to all interaction types
+  document.addEventListener("click", fire);
+  document.addEventListener("keydown", fire);
+  document.addEventListener("mousemove", fire);
+  document.addEventListener("touchstart", fire);
+
+  // Attempt #4: Trigger from requestAnimationFrame loop
+  let triedRAF = false;
+  const rafLoop = () => {
+    if (!triedRAF) {
+      triedRAF = true;
+      playAudio();
+    }
+    requestAnimationFrame(rafLoop);
+  };
+  requestAnimationFrame(rafLoop);
+
+  // Attempt #5: Try again after short delay
+  setTimeout(playAudio, 3000);
+})();
+</script>
   <script>
   window.addEventListener('DOMContentLoaded', () => {
     twemoji.parse(document.body, {
