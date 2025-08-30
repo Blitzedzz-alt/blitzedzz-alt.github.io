@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exposing Boxhead / Kelvin / lil diddy</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #f2f2f2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    canvas#snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    body {
+      padding: 2rem;
+      max-width: 850px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff4c4c;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      color: #ff4c4c;
+      margin-top: 2rem;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0.7rem 0;
+    }
+
+    .quote {
+      background-color: #222;
+      border-left: 4px solid #ff4c4c;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+
+img.evidence {
+  width: 80%;
+  max-width: 350px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 76, 76, 0.25);
+  display: block;
+}
+
+
+    .tldr {
+      background-color: #1a1a1a;
+      border: 2px dashed #ff4c4c;
+      padding: 1rem 1.5rem;
+      margin-top: 3rem;
+      border-radius: 8px;
+    }
+
+    .tldr h2 {
+      font-size: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em;
+  vertical-align: -0.1em;
+  display: inline;
+}
+    #overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      cursor: pointer;
+      z-index: 9999;
+      user-select: none;
+      transition: opacity 0.6s ease;
+    }
+    #overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
+  <div id="overlay">Click to enter</div>
+  <audio id="bgm" src="https://files.catbox.moe/5alyja.mp3" preload="auto"></audio>
+  <script>
+    const overlay = document.getElementById('overlay');
+    const bgm = document.getElementById('bgm');
+
+    overlay.addEventListener('click', async () => {
+      try {
+        await bgm.play();
+        overlay.classList.add('hidden');
+        // Optional: remove overlay from DOM after fade out to free memory
+        setTimeout(() => overlay.remove(), 600);
+      } catch (e) {
+        overlay.textContent = 'Failed to play music 😭';
+        console.error(e);
+      }
+    });
+  </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    twemoji.parse(document.body, {
+      folder: 'svg',
+      ext: '.svg'
+    });
+  });
+</script>
+  <canvas id="snow"></canvas>
+
+  <div class="quote">⚠️ This does mention CSAM content (<u>NOT</u> SHOWN DONT WORRY) 🙏</div>
+
+  <h1>Exposing Boxhead / Kelvin / lil diddy for Attempting to sell CP</h1>
+
+  <h2>1. The first CP joke..</h2>
+  <p>When I first started talking to <strong>Boxhead</strong> (aka <strong>Kelvin</strong> or <strong>lil diddy</strong>) in early <strong>2025</strong>, he told me <strong>he fucked his 7th grade teacher</strong>.</p>
+  <p>And at the time I had just met him which was weird but I ignored it.</p>
+  <p>But also this felt like a sick twisted fanatsy.</p>
+  <p>I don't have screenshots of the exact claim, but he later admitted to calling it a "joke."</p>
+  <div class="quote">(And yes, he tried brushing it off as a “joke” 💔 but that’s not how jokes work when you keep saying it seriously.)</div>
+
+  <h2>2. Mid-Year Claim: "Wanna sell CP?"</h2>
+  <p>Later this year, he randomly said to <strong>Barrelton</strong>. No warning. Just stright up "Wanna sell cp?"</p>
+  <p>Ok now what the HELL??</p>
+  <img src="screenshots/boxhead/wanna sell cp.png" alt="WHAT" class="evidence">
+  <p>Then I asked for context..</p>
+  <img src="screenshots/boxhead/me asking context.png" alt="???" class="evidence">
+
+  <h2>3. Current Claim: "its ragebait"</h2>
+  <div class="quote">“Im a person who likes to ragebait, and I was making jokes that I was about to host a cp website”<br>(Said currently)</div>
+  <img src="screenshots/boxhead/ragebait.png" alt="'its ragebait'" class="evidence">
+
+  <p>So to summarize: in <strong>one single year</strong>, he said he wanted to sell <strong>CP</strong>, then <strong>it was a joke</strong>, and now <strong>said it was ragebait</strong>.</p>
+  <p>Bro said it was ragebait when he was legit saying he had a PLAN?? 💀</p>
+  <ul>
+    <li>Maybe he’s lying to manipulate situations?</li>
+    <li>Maybe he’s lying to cover up?</li>
+    <li>Or maybe he just can’t keep his lies straight</li>
+  </ul>
+  <p>Either way — that’s a <strong>huge red flag</strong> 💯</p>
+
+  <h2>4. What This Says</h2>
+  <p>Saying your gonna sell CP isn’t just gross — it’s <strong>dangerous</strong>.</p>
+  <p>It affects LEGAL boundaries, and how safe others feel talking to you. And trying to pretend he never said “Lets sell CP”? That’s just <strong>gaslighting</strong>.</p>
+
+  <h2>5. Why I’m Posting This</h2>
+  <p>This isn’t drama — this is clarity. I’m not gonna let someone twist the story and make me seem crazy for pointing out that <strong>he was CLEARLY not joking about that</strong>.</p>
+  <p>If someone goes from saying its a joke in June → ragebait in Augest That’s not a "joke or ragebait". That’s a <strong>fucking court case</strong>.</p>
+  <div class="tldr">
+    <h2>TL;DR:</h2>
+    <ul>
+      <li>Boxhead / Kelvin / lil diddy told me he wanted to sell <strong>CP</strong> at the start of <strong>2025</strong></li>
+      <li>Later said he was <strong>joking</strong></li>
+      <li>Now says he’s <strong>ragebaiting</strong> — all in the <strong>same year</strong></li>
+      <li>That's a <strong>whole fucking LEGAL chris</strong>, not a JOKE</li>
+    </ul>
+  </div>
+  <script>
+    const canvas = document.getElementById('snow');
+    const ctx = canvas.getContext('2d');
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const flakes = Array.from({length: 100}).map(() => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 3 + 1,
+      d: Math.random() * 1 + 0.5
+    }));
+
+    function drawFlakes() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "#fff";
+      ctx.beginPath();
+      for (let i = 0; i < flakes.length; i++) {
+        const f = flakes[i];
+        ctx.moveTo(f.x, f.y);
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+      }
+      ctx.fill();
+      moveFlakes();
+    }
+
+    let angle = 0;
+    function moveFlakes() {
+      angle += 0.01;
+      for (let i = 0; i < flakes.length; i++) {
+        const f = flakes[i];
+        f.y += Math.pow(f.d, 2) + 1;
+        f.x += Math.sin(angle) * 2;
+
+        if (f.y > height) {
+          flakes[i] = {x: Math.random() * width, y: 0, r: f.r, d: f.d};
+        }
+      }
+    }
+
+    setInterval(drawFlakes, 33);
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+  </script>
+
+
+</body>
+
+</html>
